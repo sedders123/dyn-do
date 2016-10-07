@@ -19,4 +19,4 @@ record.data = open('http://ident.me').read
 
 client.domain_records.update(record, for_domain: DOMAIN , id: record.id)
 
-puts "{sub_domain}.{domain} now points to {ip}" % { :sub_domain => SUB_DOMAIN, :domain => DOMAIN, :ip => record.data }
+puts "#{SUB_DOMAIN}.#{DOMAIN} now points to #{record.data}"
