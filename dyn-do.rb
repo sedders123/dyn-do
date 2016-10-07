@@ -7,11 +7,11 @@ SUB_DOMAIN = 'home'
 
 client = DropletKit::Client.new(access_token: ENV["DO_ACCESS_TOKEN"])
 
-records = client.domain_records.all(for_domain: DOMAIN)
+domain_records = client.domain_records.all(for_domain: DOMAIN)
 
-for record in records.each
-    if record.name == SUB_DOMAIN
-        record = record
+for domain_record in domain_records.each
+    if domain_record.name == SUB_DOMAIN
+        record = domain_record
     end
 end
 
